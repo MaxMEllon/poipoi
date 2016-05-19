@@ -1,0 +1,12 @@
+/vendor/bundler/**/*
+/vendor/assets/**/*
+!.keep
+
+/.bundle
+
+/.sass-cache
+
+/bower_components
+
+/public/logs
+

@@ -1,0 +1,158 @@
+html
+  height: 100%
+  width: 100%
+  overflow: hidden
+
+body
+  height: 100%
+  width: 100%
+  overflow: hidden
+
+  > div
+    height: 100%
+    overflow: scroll
+    -webkit-overflow-scrolling: touch
+
+.react-context-menu
+  min-width: 160px
+  padding: 5px 0
+  margin: 2px 0 0
+  font-size: 16px
+  color: #373a3c
+  text-align: left
+  background-color: #fff
+  -webkit-background-clip: padding-box
+  background-clip: padding-box
+  border: 1px solid rgba(0, 0, 0, 0.15)
+  border-radius: .25rem
+  outline: none
+  font-size: 0.5em
+
+.react-context-menu-link
+  display: inline-block
+  width: calc(100% - 40px)
+  padding: 3px 20px
+  clear: both
+  font-weight: 400
+  line-height: 1.5
+  color: #373a3c
+  text-align: inherit
+  white-space: nowrap
+  background: 0 0
+  border: 0
+  font-size: 0.5em
+
+  &.active, &:hover
+    color: #fff
+    background-color: #0275d8
+    border-color: #0275d8
+    text-decoration: none
+
+.react-context-menu-item.submenu > a
+  padding-right: 27px
+
+  &:after
+    content: ''
+    display: inline-block
+    position: absolute
+    right: 7px
+
+.fileIconContainer
+  max-height: 6em
+  max-width: 17em
+  width: 17em
+  padding-left: 0.4em
+  padding-top: 1px
+  border-radius: 1em
+  color: rgb(52, 52, 52)
+  cursor: pointer
+  user-select: none
+  -moz-user-select: none
+  -webkit-user-select: none
+  -ms-user-select: none
+  display: inline-block
+
+  &:before, &:after
+    content: ""
+    cursor: pointer
+    user-select: none
+    -moz-user-select: none
+    -webkit-user-select: none
+    -ms-user-select: none
+    display: table
+
+.fileDetail
+  list-style: none
+  font-size: 0.8em
+  margin: 7px 0
+  padding-left: 10px
+  cursor: pointer
+  user-select: none
+  -moz-user-select: none
+  -webkit-user-select: none
+  -ms-user-select: none
+
+.fileDetailLabel
+  width: 15em
+  word-break: break-word
+  cursor: pointer
+  user-select: none
+  -moz-user-select: none
+  -webkit-user-select: none
+  -ms-user-select: none
+
+
+.fileManegerHeader
+  color: rgb(52, 52, 52)
+  font-family: helvetica, arial, 'hiragino kaku gothic pro', meiryo, 'ms pgothic', sans-serif
+  background: -moz-linear-gradient(top, #FFF 0%, #E6E6E6)
+  background: -webkit-gradient(linear, left top, left bottom, from(#FFF), to(#E6E6E6))
+  border: 1px solid #DDD
+  height: 2em
+  width: 100%
+  top: 0
+  left: 0
+  position: absolute
+
+.fileManegerDiscripstion
+  font-size: 0.8em
+  padding-top: 3px
+  margin-right: 1em
+  display: inline-block
+
+.fileSearchForm
+  margin: 1px 60px 0 0
+  font-size: 1.2em
+  right: 0
+  position: absolute
+
+.fileUploadButton
+  background: -moz-linear-gradient(top, #FFF 0%, rgb(214, 243, 221))
+  background: -webkit-gradient(linear, left top, left bottom, from(#FFF), to(rgb(214, 243, 221)))
+  box-shadow: 1px 1.5px 0px rgb(35, 172, 14)
+  border: 1px solid rgba(35, 172, 14, 0.3)
+  padding-top: 3px
+  margin: -2px 50px 0 0
+  font-size: 1em
+  font-weight: bold
+  cursor: pointer
+  left: 18em
+
+.fileUploadButton:active, .fileManegerExitButton:active
+  margin: 1px 1px 1px 2px
+  height: 21px
+  box-shadow: none
+  cursor: pointer
+
+.fileManegerExitButton
+  background: -moz-linear-gradient(top, #FFF 0%, rgb(248, 225, 230))
+  background: -webkit-gradient(linear, left top, left bottom, from(#FFF), to(rgb(248, 225, 230)))
+  box-shadow: 1px 1.5px 0 rgb(195, 33, 71)
+  border: 1px solid rgba(195, 33, 71, 0.3)
+  margin-top: -1px
+  margin-right: 20px
+  font-size: 1.2em
+  color: red
+  cursor: pointer
+  right: 0
+  position: absolute

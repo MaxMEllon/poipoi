@@ -1,0 +1,5 @@
+script type='text/javascript' src='/dygraph-combined.js'
+#container
+javascript:
+  container = document.getElementById('container');
+  g = new Dygraph(container, '#{@data}');
