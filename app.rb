@@ -13,17 +13,15 @@ get '/' do
 end
 
 post '/upload' do
-  if params[:file]
-    date = Time.now.to_s.split[0]
-    hour, min, sec = Time.now.to_s.split[1].to_s.split(':')
-    time_stamp = date << '_' << hour << ':' << min << ':' << sec
-    save_path = "./public/logs/#{time_stamp}.csv"
-    File.open(save_path, 'wb') do |f|
-      p params[:file][:tempfile]
-      f.write params[:file][:tempfile].read
-    end
-  else
-    return {response: 500}.to_json
+  return {response: 500, message: "Error: Wrong number of params."}.to_json unless params[:file]
+  date = Time.now.to_s.split[0]
+  hour, min, sec = Time.now.to_s.split[1].to_s.split(':')
+  time_stamp = date << '_' << hour << ':' << min << ':' << sec
+  save_path = "./public/logs/#{time_stamp}.csv"
+  begin
+    File.open(save_path, 'wb') { |f| f.write params[:file][:tempfile].read }
+  rescue => e
+    return {response: 500, message: "Error: #{e}"}.to_json
   end
   {response: 200}.to_json
 end
@@ -39,6 +37,12 @@ end
 get '/:filename' do
   name = params[:filename]
   @data = File.read("./public/logs/#{name}")
-  p @data.gsub!("\n", "\\n")
+  @data.gsub!("\n", "\\n")
   slim :graph
 end
+
+get '/download/:filename' do
+  name = params[:filename]
+  File.read("./public/logs/#{name}")
+end
+
